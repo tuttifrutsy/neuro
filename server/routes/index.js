@@ -14,7 +14,7 @@ const sessionValidation = (req, res, next) => {
   }
 };
 
-router.get("/dashboard", sessionValidation, (req, res, next) => {
+router.get("/patient", sessionValidation, (req, res, next) => {
   const id = req.session.currentUser;
   User.findById(id)
     .then(user => {

@@ -10,7 +10,7 @@ authRoutes.get('/signup', (req, res, next) => {
 })
 
 authRoutes.post("/signup", (req, res, next) => {
-  const {firstname, lastname, email, password, phone, name, Dx, alergy, gender } = req.body;
+  const {firstname, lastname, email, password, phone, name, gender, dateB } = req.body;
 
   if ( password === "" || email === "") {
     return res.json({ msg: "Ingresa todos los campos" });
@@ -30,13 +30,11 @@ authRoutes.post("/signup", (req, res, next) => {
         },
         email,
         phone,
-        Dx,
-        alergy,
+        dateB,
         gender,
         password: hashPass,
         role: "USER"
       });
-
       newUser.save(err => {
         if (err) {
           return res.json({ msg: "Something went wrong" });

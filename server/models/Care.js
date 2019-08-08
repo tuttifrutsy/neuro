@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const careSchema = new Schema({
   title: String,
   description: String,
-  recomendations: [String],
+  recomendations: [],
 },
 {
   timestamps: true

@@ -14,9 +14,10 @@ const userSchema = new Schema({
   phone: Number,
   password: String,
   email: String,
-  Dx: String,
-  Px: [String],
-  alergy: String,
+  dx: String,
+  px: [String],
+  alergy: [String],
+  imagesMedical: [String],
   direction: {
     address1: String, //Calle
     address2: String, // Interior
@@ -27,6 +28,7 @@ const userSchema = new Schema({
     longitude: Number
   },
   tips:[{type: Schema.Types.ObjectId, ref: 'Care'}],
+  medication: [{type: Schema.Types.ObjectId, ref: 'Medication'}],
   role:{
     type: String,
     enum:['USER','ADMIN', 'DOCTOR']

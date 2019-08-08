@@ -44,11 +44,13 @@ const router = require('./routes/index');
 //Mongoose
 
 mongoose.Promise = Promise;
+// mongoose
+//   .connect("mongodb://localhost/neurogram", { useNewUrlParser: true })
+//   .then(db => console.log("La base de datos ha sido actualizada"))
+//   .catch(err => Console.log(err));
 mongoose
   .connect(
-    `mongodb+srv://Admin:${
-      process.env.PWDB
-    }@clusterneurogram-b3btc.mongodb.net/neurogram?retryWrites=true&w=majority`,
+    `mongodb+srv://Admin:${process.env.PWDB}@cluster0-b3btc.mongodb.net/neurogram`,
     { useNewUrlParser: true }
   )
   .then(x => {
