@@ -44,23 +44,23 @@ const router = require('./routes/index');
 //Mongoose
 
 mongoose.Promise = Promise;
-// mongoose
-//   .connect("mongodb://localhost/neurogram", { useNewUrlParser: true })
-//   .then(db => console.log("La base de datos ha sido actualizada"))
-//   .catch(err => Console.log(err));
 mongoose
-  .connect(
-    `mongodb+srv://Admin:${process.env.PWDB}@cluster0-b3btc.mongodb.net/neurogram`,
-    { useNewUrlParser: true }
-  )
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error("Error connecting to mongo", err);
-  });
+  .connect("mongodb://localhost/neurogram", { useNewUrlParser: true })
+  .then(db => console.log("La base de datos ha sido actualizada"))
+  .catch(err => Console.log(err));
+// mongoose
+//   .connect(
+//     `mongodb+srv://Admin:${process.env.PWDB}@cluster0-b3btc.mongodb.net/neurogram `,
+//     { useNewUrlParser: true }
+//   )
+//   .then(x => {
+//     console.log(
+//       `Connected to Mongo! Database name: "${x.connections[0].name}"`
+//     );
+//   })
+//   .catch(err => {
+//     console.error("Error connecting to mongo", err);
+//   });
 
 // CORS
 const corsOptions = {

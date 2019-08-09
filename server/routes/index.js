@@ -23,6 +23,16 @@ router.get("/patient", sessionValidation, (req, res, next) => {
     .catch(err => res.status(400).json(err));
 });
 
-
+router.post('/edit', (req, res, next) => {
+  const id = req.session.currentUser;
+  const {firstname, lastname, name, age, alergy} = req.body;
+  User.updateOne({_id:id}, {$set: { nombre: {name, lastname, firstname},
+    age, alergy
+  }})
+  .then(user => {
+    res.status(200).json(user)
+  })
+  .catch(err => res.status(400).json(err));
+})
 
 module.exports = router;
