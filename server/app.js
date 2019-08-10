@@ -91,7 +91,7 @@ app.use(session({
 
 app.use('/', authRoutes);
 app.use('/', router);
-// app.use('/doctor', doctor);
+app.use('/doctor', doctor);
 // app.use('/admin', admin);
 
 server.listen(process.env.PORT, () => {

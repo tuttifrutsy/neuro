@@ -65,7 +65,7 @@ authRoutes.post("/login", (req, res) => {
     }
     if (bcrypt.compareSync(password, user.password)) {
       req.session.currentUser = user;
-      console.log("sesion", req.session, user);
+      //console.log("sesion", req.session, user);
       return res.json({ msg: "Se ha iniciado sesión" });
     } else {
       return res.json({ msg: "Verifica tu contraseña" });
